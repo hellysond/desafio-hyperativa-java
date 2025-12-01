@@ -1,0 +1,34 @@
+{
+  "realm": "hyperativa",
+  "enabled": true,
+  "users": [
+    {
+      "username": "user",
+      "enabled": true,
+      "email": "user@exemple.com",
+      "emailVerified": true,
+      "firstName": "User",
+      "lastName": "Hyperativa API",
+      "requiredActions": [],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "password",
+          "temporary": false
+        }
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "api-client",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "123456",
+      "serviceAccountsEnabled": true,
+      "directAccessGrantsEnabled": true
+    }
+  ]
+}
