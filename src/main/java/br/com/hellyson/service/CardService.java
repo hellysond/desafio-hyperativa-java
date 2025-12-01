@@ -7,8 +7,10 @@ import br.com.hellyson.repository.CardRepository;
 import br.com.hellyson.util.CryptoUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,7 +40,7 @@ public class CardService {
         String hash = crypto.hash(cardNumber);
 
         if (repository.findByHash(hash).isPresent())
-            throw new IllegalArgumentException("Card already exists");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Card already exists");
 
         Card card = new Card();
         card.setEncryptedCardNumber(crypto.encrypt(cardNumber));
