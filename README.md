@@ -15,6 +15,9 @@ This project implements an API for registering, querying, and processing card nu
   "password": "password"
 }
 ```
+### Flyaway Database Migration
+
+This project uses Flyway to manage database migrations for the cards MySQL database. Flyway allows you to version, track, and automatically apply database schema changes in a controlled manner.
 
 ### AES Encryption
 - Card numbers are encrypted at rest using AES (`AES_KEY` environment variable).
@@ -58,6 +61,11 @@ File format rules:
 ## How to Run
 
 ### 1. Start all services:
+
+```bash
+docker-compose build
+```
+
 ```bash
 docker-compose up -d
 ```
@@ -130,3 +138,16 @@ src/
 - Services tested with JUnit + Mockito.
 
 ---
+
+## Common Issues
+
+Here are some common problems you might encounter when running the project. You may need to:
+
+
+```bash
+docker-compose down
+```
+
+```bash
+docker-compose up 
+```
