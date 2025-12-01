@@ -2,13 +2,14 @@
 
 This project implements an API for registering, querying, and processing card numbers using modern Spring Boot patterns and an event-driven architecture.
 
----
+![img_3.png](img_3.png)
 
+---
 ##  Features
 
 ### Authentication (Keycloak + Internal Login Endpoint)
 - Keycloak runs via Docker.
-- The application exposes `/auth/login` so users can obtain a token directly through Swagger using:
+- The application exposes `/auth/login` so users can obtain an Oauth2 token directly through Swagger using:
 ```json
 {
   "username": "user",
