@@ -16,7 +16,7 @@ services:
     container_name: redis
     ports:
       - "6379:6379"
-    command: [ "redis-server", "--appendonly", "yes" ]
+    command: ["--appendonly", "yes"]
 
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
@@ -49,7 +49,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: kafka-zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   app:
